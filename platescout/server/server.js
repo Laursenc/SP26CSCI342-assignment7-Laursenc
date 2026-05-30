@@ -221,7 +221,7 @@ app.post("/api/logout", (req, res) => {
 
   auth = req.headers.authorization;
 
-  if(!auth || auth.slice(0 , 6) !== "Bearer "){
+  if(!auth || auth.slice(0 , 7) !== "Bearer "){
     return res.status(500).json({ error: "Missing or invalid token." });
   }
 
