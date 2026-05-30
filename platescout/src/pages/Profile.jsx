@@ -46,7 +46,8 @@ function Profile() {
           method: 'POST',
           headers: { 
             // Call POST /api/logout  with the header Authorization: "Bearer " + <token>
-            Authorization: 'Bearer ' + token 
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer  ${token}` 
           },
           //body: empty
         });
