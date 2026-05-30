@@ -18,7 +18,7 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-platescout.vercel.app",
+    "https://sp-26-csci-342-assignment7-laursenc-gamma.vercel.app/",
     /\.vercel\.app$/,
   ],
   credentials: true,
