@@ -79,14 +79,6 @@ const userSchema = new mongoose.Schema({
 
 })
 
-app.get("/api/health", (req, res) => {
-  res.json({
-    status: "ok",
-    time: new Date().toISOString(),
-    mongo: mongoose.connection.readyState === 1,
-  });
-});
-
 const User = mongoose.model("User", userSchema);
 
 // Shared validator — same as A6 (plain-text rules applied BEFORE we hash).
@@ -151,6 +143,14 @@ app.post("/api/register", async (req, res) => {
     }
     return res.status(500).json({ error: "Server error." });
   }
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ok",
+    time: new Date().toISOString(),
+    mongo: mongoose.connection.readyState === 1,
+  });
 });
 
 // ============================================================
